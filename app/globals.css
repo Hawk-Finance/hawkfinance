@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+:root {
+  --hawk-canvas: #071412;
+  --hawk-canvas-2: #0a1916;
+  --hawk-surface: #0d1d19;
+  --hawk-ivory: #f1f0ea;
+  --hawk-secondary: #9ba8a1;
+  --hawk-muted: #68756f;
+  --hawk-lime: #c8ff4d;
+  --hawk-deep: #143c30;
+  --hawk-line: rgba(241, 240, 234, 0.1);
+  --hawk-line-subtle: rgba(241, 240, 234, 0.06);
+  --hawk-positive: #a9f36a;
+  --hawk-warning: #e5c76b;
+  --hawk-danger: #e77c72;
+  --background: var(--hawk-canvas);
+  --foreground: var(--hawk-ivory);
+}
+
+@theme inline {
+  --color-canvas: var(--hawk-canvas);
+  --color-canvas-2: var(--hawk-canvas-2);
+  --color-surface: var(--hawk-surface);
+  --color-ivory: var(--hawk-ivory);
+  --color-secondary: var(--hawk-secondary);
+  --color-muted: var(--hawk-muted);
+  --color-lime: var(--hawk-lime);
+  --color-deep: var(--hawk-deep);
+  --color-line: var(--hawk-line);
+  --color-line-subtle: var(--hawk-line-subtle);
+  --color-positive: var(--hawk-positive);
+  --color-warning: var(--hawk-warning);
+  --color-danger: var(--hawk-danger);
+  --color-background: var(--hawk-canvas);
+  --color-foreground: var(--hawk-ivory);
+  --font-sans: var(--font-geist-sans);
+  --font-serif: var(--font-newsreader);
+}
+
+html {
+  scroll-padding-top: 88px;
+  background: var(--hawk-canvas);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background: var(--hawk-canvas);
+  color: var(--hawk-ivory);
+  font-family: var(--font-geist-sans), sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--hawk-lime);
+  color: var(--hawk-canvas);
+}
+
+:focus-visible {
+  outline: 1px solid var(--hawk-lime);
+  outline-offset: 3px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+@keyframes hawk-orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hawk-orbit {
+  animation: hawk-orbit 96s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hawk-orbit {
+    animation: none;
+  }
+}
