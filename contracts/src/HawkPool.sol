@@ -6,7 +6,10 @@ interface IHawkToken {
     function transfer(address to, uint256 amount) external returns (bool);
 }
 
-/// @notice One margin account across the listed Hawk markets.
+/// @notice Shared margin book for the listed markets.
+///         Supply, withdraw, borrow, and repay move tokens one for one.
+///         Prices and APR figures are fixed in the constructor. Interest is not accrued.
+///         The contract takes no fee and does not liquidate.
 contract HawkPool {
     uint256 internal constant BPS = 10_000;
     uint256 internal constant WAD = 1e18;

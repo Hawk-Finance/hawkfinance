@@ -3,9 +3,11 @@ pragma solidity 0.8.28;
 
 import {Script, console} from "forge-std/Script.sol";
 import {HawkPool} from "../src/HawkPool.sol";
-import {HawkToken} from "../src/HawkToken.sol";
+import {HawkToken} from "../src/mocks/HawkToken.sol";
 
-contract Deploy is Script {
+/// @notice Local-only deploy. Mints HawkToken stand-ins and seeds a book.
+///         Robinhood Chain uses script/DeployRobinhood.s.sol against the live tokens.
+contract DeployLocal is Script {
     function run() external {
         uint256 deployerKey = vm.envUint("DEPLOYER_PRIVATE_KEY");
         uint256 hawkKey = vm.envUint("HAWK_WALLET_PRIVATE_KEY");

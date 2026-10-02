@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.28;
 
+/// @notice Mintable token used by tests and the local deploy script.
+///         This contract is not part of the Robinhood Chain deployment.
 contract HawkToken {
     string public name;
     string public symbol;

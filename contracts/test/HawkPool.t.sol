@@ -3,7 +3,7 @@ pragma solidity 0.8.28;
 
 import {Test} from "forge-std/Test.sol";
 import {HawkPool} from "../src/HawkPool.sol";
-import {HawkToken} from "../src/HawkToken.sol";
+import {HawkToken} from "../src/mocks/HawkToken.sol";
 
 contract HawkPoolTest is Test {
     HawkToken internal pons;
